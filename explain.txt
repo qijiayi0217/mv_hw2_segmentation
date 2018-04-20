@@ -1,0 +1,26 @@
+About over-segmentation:
+
+	1. Object with a low contrast (color is close to white) will have relative bad segmentation. Some of the edges are not detected by the algorithm.
+
+	2. The white areas on objects tend to be classified into background.
+
+	3. Most high contrast object have good segmentation.
+
+About changing tau:
+
+	1. When tau is in range [0.2-0.7], the foreground and background segmentation have a good performances.
+
+	2. When tau is lower than 0.2, the segmentation will classify some other superpixels whose color is close to the foreground object as foreground.
+
+	3. When tau is higher than 0.7, few superpixel is classified as foreground so the whole image is black.
+
+About changing key:
+
+ 	1. If the key is changed within a same object, the object will be extracted.
+
+	2. If the key is changed into another object, that object will be extracted.
+
+I think it is useless for Spot-It game. Because we can't determine which object to be extracted. If we know, we don't need to segment it.
+
+
+ 
